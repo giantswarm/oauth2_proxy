@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/bitly/oauth2_proxy/providers"
+	"github.com/giantswarm/oauth2_proxy/providers"
 	oidc "github.com/coreos/go-oidc"
 	"github.com/mbland/hmacauth"
 )
