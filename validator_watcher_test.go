@@ -40,46 +40,6 @@ func (vt *ValidatorTest) UpdateEmailFileViaRenameAndReplace(
 	os.Remove(moved_name)
 }
 
-func TestValidatorOverwriteEmailListDirectly(t *testing.T) {
-	vt := NewValidatorTest(t)
-	defer vt.TearDown()
-
-	vt.WriteEmails(t, []string{
-		"xyzzy@example.com",
-		"plugh@example.com",
-	})
-	domains := []string(nil)
-	updated := make(chan bool)
-	validator := vt.NewValidator(domains, updated)
-
-	if !validator("xyzzy@example.com") {
-		t.Error("first email in list should validate")
-	}
-	if !validator("plugh@example.com") {
-		t.Error("second email in list should validate")
-	}
-	if validator("xyzzy.plugh@example.com") {
-		t.Error("email not in list that matches no domains " +
-			"should not validate")
-	}
-
-	vt.UpdateEmailFile(t, []string{
-		"xyzzy.plugh@example.com",
-		"plugh@example.com",
-	})
-	<-updated
-
-	if validator("xyzzy@example.com") {
-		t.Error("email removed from list should not validate")
-	}
-	if !validator("plugh@example.com") {
-		t.Error("email retained in list should validate")
-	}
-	if !validator("xyzzy.plugh@example.com") {
-		t.Error("email added to list should validate")
-	}
-}
-
 func TestValidatorOverwriteEmailListViaRenameAndReplace(t *testing.T) {
 	vt := NewValidatorTest(t)
 	defer vt.TearDown()
