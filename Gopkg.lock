@@ -32,6 +32,12 @@
   version = "v1.1.0"
 
 [[projects]]
+  name = "github.com/fsnotify/fsnotify"
+  packages = ["."]
+  revision = "c2828203cd70a50dcccfb2761f8b1f8ceef9a8e9"
+  version = "v1.4.7"
+
+[[projects]]
   branch = "master"
   name = "github.com/golang/protobuf"
   packages = ["proto"]
@@ -104,6 +110,12 @@
 
 [[projects]]
   branch = "master"
+  name = "golang.org/x/sys"
+  packages = ["unix"]
+  revision = "fc8bd948cf46f9c7af0f07d34151ce25fe90e477"
+
+[[projects]]
+  branch = "master"
   name = "google.golang.org/api"
   packages = [
     "admin/directory/v1",
@@ -131,12 +143,6 @@
   version = "v1.0.0"
 
 [[projects]]
-  name = "gopkg.in/fsnotify.v1"
-  packages = ["."]
-  revision = "836bfd95fecc0f1511dd66bdbf2b5b61ab8b00b6"
-  version = "v1.2.11"
-
-[[projects]]
   name = "gopkg.in/square/go-jose.v2"
   packages = [
     ".",
@@ -149,6 +155,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "b502c41a61115d14d6379be26b0300f65d173bdad852f0170d387ebf2d7ec173"
+  inputs-digest = "2bb19e67f80def72686acdda03b28ec63baa375d9b17e6403736220107cfe72f"
   solver-name = "gps-cdcl"
   solver-version = 1
