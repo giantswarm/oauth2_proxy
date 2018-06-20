@@ -14,6 +14,18 @@ import (
 )
 
 func main() {
+	if len(os.Args) > 1 {
+		if os.Args[1] == "version" {
+			fmt.Println("v2.2.1")
+			return
+		}
+
+		if os.Args[1] == "--help" {
+			fmt.Println("OAuth2 Reverse Poxy")
+			return
+		}
+	}
+
 	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
 	flagSet := flag.NewFlagSet("oauth2_proxy", flag.ExitOnError)
 
