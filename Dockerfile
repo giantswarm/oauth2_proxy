@@ -8,12 +8,7 @@ RUN apk add --no-cache --virtual=build-dependencies ca-certificates
 
 WORKDIR /opt/oauth2_proxy
 
-# Setting sample envs that are required for startup
-ENV OAUTH2_PROXY_COOKIE_SECRET  <secret> # The seed string for secure cookies
-ENV OAUTH2_PROXY_CLIENT_ID      <clientId> # The OAuth Client ID
-ENV OAUTH2_PROXY_CLIENT_SECRET  <clientSecret> # The OAuth Client Secret
-
 # Expose the ports we need and setup the ENTRYPOINT w/ the default argument
 EXPOSE 8080 4180
-ENTRYPOINT ["/opt/oauth2_proxy/oauth2_proxy", "--email-domain=*"]
-CMD ["--upstream=http://0.0.0.0:8080/", "--http-address=0.0.0.0:4180" ]
+ENTRYPOINT ["/opt/oauth2_proxy/oauth2_proxy"]
+CMD ["--upstream=http://0.0.0.0:8080/", "--http-address=0.0.0.0:4180"]
