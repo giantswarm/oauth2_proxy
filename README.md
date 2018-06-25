@@ -8,7 +8,7 @@ to validate accounts by email, domain or group.
 
 This is a Giant Swarm fork of https://github.com/bitly.
 It is forked from `master` to include all features we need, i.e. OIDC.
-Changes to the upstream are made so run it within our CI Pipeline using architect.
+Changes to the upstream are made to run it within our CI Pipeline using [architect](https://github.com/architect).
 
 ## Architecture
 
