@@ -1,13 +1,16 @@
+[![CircleCI](https://circleci.com/gh/giantswarm/oauth2_proxy.svg?style=svg)](https://circleci.com/gh/giantswarm/oauth2_proxy)
+
 oauth2_proxy
 =================
 
 A reverse proxy and static file server that provides authentication using Providers (Google, GitHub, and others)
 to validate accounts by email, domain or group.
 
-[![Build Status](https://secure.travis-ci.org/bitly/oauth2_proxy.svg?branch=master)](http://travis-ci.org/bitly/oauth2_proxy)
+## Fork Note
 
-
-![Sign In Page](https://cloud.githubusercontent.com/assets/45028/4970624/7feb7dd8-6886-11e4-93e0-c9904af44ea8.png)
+This is a Giant Swarm fork of https://github.com/bitly.
+It is forked from `master` to include all features we need, i.e. OIDC.
+Changes to the upstream are made to run it within our CI Pipeline using [architect](https://github.com/architect).
 
 ## Architecture
 
