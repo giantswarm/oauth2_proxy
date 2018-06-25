@@ -1,4 +1,4 @@
-oauth2_proxy
+oauth2_proxy [![CircleCI](https://circleci.com/gh/giantswarm/oauth2_proxy.svg?style=svg)](https://circleci.com/gh/giantswarm/oauth2_proxy)
 =================
 
 A reverse proxy and static file server that provides authentication using Providers (Google, GitHub, and others)
